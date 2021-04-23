@@ -59,10 +59,8 @@ def get_wtrace_agent_list(country_code, table_id, ip_version="ipv4"):
 def run_wtrace(country_code, dest_url, bg_client, table_id, agent_ip):
     latency_result = {}
     rows_to_insert = []
-    wtrace_cmd = "/google/data/ro/teams/internetto/wtrace --nowait --ip_version=4 --agent=" + agent_ip["add
-ress"] + " " + dest_url
-#    cmd = 'ssh ' + glinux_host + ' "' + wtrace_cmd + '"' + '|grep "Response code\|Time elapsed\|The trace 
-ran on"'
+    wtrace_cmd = "/google/data/ro/teams/internetto/wtrace --nowait --ip_version=4 --agent=" + agent_ip["address"] + " " + dest_url
+#    cmd = 'ssh ' + glinux_host + ' "' + wtrace_cmd + '"' + '|grep "Response code\|Time elapsed\|The trace ran on"'
     cmd = wtrace_cmd  + '|grep "Response code\|Time elapsed\|The trace ran on"'
     print(cmd)
     ret = run(cmd, stdout=PIPE, stderr=PIPE, universal_newlines=True, shell=True)
