@@ -98,8 +98,7 @@ def run_wtrace(country_code, dest_url, bg_client, table_id, agent_ip):
 
 
 
-def start_wtrace_thread_pool(max_worker, country_code, dest_url, bg_client, table_id, num_loop, agent_list)
-:
+def start_wtrace_thread_pool(max_worker, country_code, dest_url, bg_client, table_id, num_loop, agent_list):
     if num_loop == 1:
         pool = ThreadPoolExecutor(max_workers=max_worker, thread_name_prefix="wtrace_")
         for index, agent_ip in agent_list.iterrows():
@@ -140,10 +139,8 @@ while(datetime.datetime.utcnow() <= endtime):
     # Construct a BigQuery client object.
     client = bigquery.Client()
     # Start the metricmonitor test
-    start_wtrace_thread_pool(max_worker, country_code, dest_url_a, client, latency_table_id, num_loop, agen
-t_list)
-    start_wtrace_thread_pool(max_worker, country_code, dest_url_b, client, latency_table_id, num_loop, agen
-t_list)
+    start_wtrace_thread_pool(max_worker, country_code, dest_url_a, client, latency_table_id, num_loop, agent_list)
+    start_wtrace_thread_pool(max_worker, country_code, dest_url_b, client, latency_table_id, num_loop, agent_list)
     # Wait for interval
     time.sleep(60)
     # Close the BigQuery client object.
