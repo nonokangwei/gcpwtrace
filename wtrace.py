@@ -80,7 +80,7 @@ def main():
 
     # Add the arguments to the parser
     ap.add_argument("-c", "--countrycode", required=True,
-       help="please check out the available country code with --list countrycode")
+       help="please check out the available country code with wtrace list_countries")
     ap.add_argument("-i", "--interval", required=True,
        help="set the trace interval")
     ap.add_argument("-p", "--parrallel", required=True,
