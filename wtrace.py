@@ -88,9 +88,9 @@ def main():
     ap.add_argument("-e", "--endpoint", required=True,
        help="set trace destination with pattern http://")
     ap.add_argument("-l", "--loop", default=1,
-       help="set test loop nuber")
+       help="set test loop number")
     ap.add_argument("-m", "--max_run_hours", default=19,
-       help="set test loop nuber")
+       help="set test loop number")
     args = vars(ap.parse_args())
 
     # Init variable
