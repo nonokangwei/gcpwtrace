@@ -53,6 +53,7 @@ def run_wtrace(country_code, dest_url, bq_client, table_id, agent_ip, run_info, 
         latency_result = extract_result(ret_splitlines)
         run_info['isp'] = agent_ip['isp']
         run_info['metro'] = agent_ip['metro']
+        run_info['datetime'] = str(datetime.datetime.utcnow())
         latency_result.update(run_info)
         print('[loop {}: {}/{}]: {}'.format(loop+1, pid, agent_num, latency_result))
         bq_client.insert_rows_json(table_id,[latency_result])
@@ -138,7 +139,7 @@ def main():
     run_info = {
         'run_id': run_id,
         'country_code': country_code,
-        'datetime': str(datetime.datetime.utcnow()),
+#        'datetime': str(datetime.datetime.utcnow()),
         'dest_url': dest_url
     }
 
