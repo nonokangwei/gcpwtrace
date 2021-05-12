@@ -51,6 +51,8 @@ def run_wtrace(country_code, dest_url, bq_client, table_id, agent_ip, run_info, 
         wtrace_output = subprocess.run(wtrace_cmd, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
         ret_splitlines = wtrace_output.stdout.splitlines()
         latency_result = extract_result(ret_splitlines)
+        run_info['isp'] = agent_ip['isp']
+        run_info['metro'] = agent_ip['metro']
         latency_result.update(run_info)
         print('[loop {}: {}/{}]: {}'.format(loop+1, pid, agent_num, latency_result))
         bq_client.insert_rows_json(table_id,[latency_result])
@@ -67,8 +69,8 @@ def start_wtrace_thread_pool(max_worker, country_code, dest_url, bq_client, tabl
         pid = 1
         for index, agent_ip in agent_list.iterrows():
             if datetime.datetime.utcnow() < endtime:
-                run_info['isp'] = agent_ip['isp']
-                run_info['metro'] = agent_ip['metro']
+#                run_info['isp'] = agent_ip['isp']
+#                run_info['metro'] = agent_ip['metro']
                 pool.submit(run_wtrace, country_code, dest_url, bq_client, table_id, agent_ip, run_info, pid, agent_num, loop)
                 pid += 1
                 time.sleep(interval)
