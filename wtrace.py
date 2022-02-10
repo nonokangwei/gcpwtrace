@@ -50,7 +50,7 @@ def extract_result(lines):
             result['ping_max_latency_ms'] = float(lines[line_no].split('=')[1].replace('ms', '').split('/')[2].strip())
         elif lines[line_no].lower().find('cdn_cache_id') != -1:
             result['gcp_pop'] = lines[line_no].split(':')[1].split()[0].strip()
-        elif lines[line_no].lower().find('age') != -1:
+        elif lines[line_no].lower().find('age:') != -1:
             result['age'] = lines[line_no].split(':')[1].split()[0].strip()
         elif lines[line_no].lower().find('response code') != -1:
             result['response_code'] = int(lines[line_no].split(':')[1].strip())
@@ -62,7 +62,7 @@ def extract_result(lines):
     return result
  
 def run_wtrace(dest_url, bq_client, table_id, agent_ip, run_info, pid, agent_num, loop):
-    wtrace_cmd = '/google/data/ro/teams/internetto/wtrace --nowait --ip_version=4 --http_max_transfer_sec=360 --agent={} {}'.format(agent_ip['address'], dest_url)
+    wtrace_cmd = '/google/data/ro/teams/internetto/wtrace --nowait --ip_version=4 --wtrace_rpc_timeout=3600s --rpc_deadline_secs=3600 --http_max_transfer_sec=3600 --agent={} {}'.format(agent_ip['address'], dest_url)
     # update below to collect more useful info
     wtrace_cmd += ' | grep -i "Response code\|Time elapsed\|The trace ran on\|rtt min/avg/max\|Using IP address\|Cdn_Cache_Id\|Response length\|age"'
     try:
