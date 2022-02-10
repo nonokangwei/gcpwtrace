@@ -131,4 +131,5 @@ dmypy.json
 # For this project
 .vscode/
 *.txt
+!requirements.txt
 *.json
