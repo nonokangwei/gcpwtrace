@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "dave-selfstudy01",
+  "private_key_id": "211e8f677dc476dd4248d4e8985a0653ec32bdd0",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCmNtld5SYjQMix\nHrYlmYVtEdxwsoAU2XDOzx1CGCizzv0bjwCz+Jn6gfESthhaTq1Dsg9Ac3mepkQ+\nht6aqRfZr5LoPgElElbxW9Axjde0kVtheGN5SkIhte7Dbrv5MTcSOq/UPrCosFo0\nDbqZZBjC3gifEsZu2jBK/dA6ntZN1j93UMygfSlVkj4tSS5ISKhffMLEPCH0zOqx\n95VyKk7SVpkikLD+/W58Z2IDO/KrApbdFjfcN/jL4Sy2ycZqWkE6uc6Qb7AxS6do\n87LWNQimFDkXI6eLAQZJSxn7aROn551o6rE0iGN1bJ7l+uC3Ki8CiBjREDcxbqvo\nz38femptAgMBAAECggEAKI/Zj1eorTE12L17K2VR4YpajpkM9ymSJTH3fKXrJugk\nLenBvOm13+N+inesLTumfk7xeGPFwgDmxhCBOeJ6esnlMq5Q9rRJSdjDT5iDE6Jm\nV7y6n8KOrW3Z0NEQ59DKFPWD66qJz3zL4oiYKS87eLCZD4LUMICoCOD0RB33g+JY\niClIOwP1TOlIEbJiXLbrWYJCtu/kFJnMFcZi9GvHq+gcp8fuqrIjGg4pCK+dQJEW\nOjBqEh1k7BmVGttw81Ca/x74bXyzy4fLFYlnfYOwkJCq/7iuKAZaMzOAGzBuUjs4\nUgRNhQ/xluMPEHbmWfn5yCqiiZ/yhHrhzreTnLk/iQKBgQDOasb4TdZGJ0vKvBUM\ngqsiTKT0Xx1t6KDSQ9gOw1T+k7qcLht5CJdPRsvMRyqENTnbEqtI2goLRKr1dIWW\nZNmtmPPQzV4vepU2rPo0fylxABLnbkLiev0qI4d5TQ77cy6clh1BrFn/z+cHL33T\nONxw+OVadDs1tZC7eRLN34lNJQKBgQDOI+AONN5KLJ8GTfQZl0VyDu11tNgIgNjw\n/gxezye2+RFEwkiHUWNwpQnfvov44CbM8ADYPxb0HG05SeadfNHXjIhwxWxcUIxT\nI/h8EoaG58LcD1F/0WyuOi+CHPZFs9oFM5XY/p6ofowKRdZoyzscP0J5yRkUioK/\nhbI6COB5qQKBgEOhxrmav0dTHsk5YOgtdCcT18Rd2cWmP/NE2WjU5WdYPf9oOAYr\nI3CNML8o3ixdSCyYbFi9YCcbA6zS1eZV+uCfSduzPlXuIy+782r58zkcHhWIEhAk\n3ghNhdjfv7XxomcZ5FIdR4vCsd6v19k6OzgkxPkjNjc920Mhw2CDCnilAoGAQXPg\nq4Ib5r9eSvkrfYirkzisK0ido62NtI9lzCDIgm95DTUHJHgyM80jYni1JvO9Pisi\niYcWubHg+GS/pdfBJUjI9c2px3IH7EoqlvKm5mTmWUs/3G7ZrERrW0vo4l7l5ero\nNHs8U1HDE2vzVVjaTvDDIbo5jW0hcMB5w7WX2OkCgYAPAA+ohIdzLn9UkOa4lF35\n5lrBZ7QTCZQ7ukJ9IMA3lMJ36rppcQ4Mc7mi6/HVdxxGZxUve3RtddhdSJeNg6Sm\nC8ZL8BX+rR/2+zSo0ppHDBhTjQDT4+3B1a8/tz64aPp2bG65Acaa/07i1rcnB5UP\nF+2z5oNpODXBIQeh2ELX2g==\n-----END PRIVATE KEY-----\n",
+  "client_email": "dave-selfstudy-demo@dave-selfstudy01.iam.gserviceaccount.com",
+  "client_id": "108441385217497500678",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dave-selfstudy-demo%40dave-selfstudy01.iam.gserviceaccount.com"
+}
