@@ -133,3 +133,5 @@ dmypy.json
 *.txt
 !requirements.txt
 *.json
+*.csv
+*.ipynb
