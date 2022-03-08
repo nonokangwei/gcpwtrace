@@ -5,7 +5,7 @@ This code is using the wtrace tool to do RUM on the client performance. all the 
 
 Step 1: Get Wtrace Access
 
-Step 2: Using the collectagentinfosavefile.py to save the agent information as a .CSV file, then load the file to BG Table as a Dimension Table, which will refer by following setp.
+Step 2: Using the collect_agent_info.py to save the agent information to BG Table as a Dimension Table, which will refer by following setp.
 
 Step 3: Edit config.ini for credentials and BQ tables
 
