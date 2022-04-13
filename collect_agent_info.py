@@ -1,5 +1,7 @@
 import subprocess
 import time
+import configparser
+import os
 from google.cloud import bigquery
 
 BATCH_SIZE = 1000
@@ -10,7 +12,11 @@ ret = subprocess.run(["/google/data/ro/teams/internetto/wtrace list_agents"] , s
 retsplitlines = ret.stdout.splitlines()
 
 # Init tableid
-table_id = "lxd-project.wtrace.agent_info"  #<==== modify to your table
+# table_id = "dave-selfstudy01.wtrace.agent_info"  #<==== modify to your table
+config = configparser.ConfigParser()
+config.read('config.ini')
+table_id = config['TABLES']['agent_table_id']
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = config['SECRETS']['service_key_path']
 
 schema = [
     bigquery.SchemaField('location', 'STRING'),
