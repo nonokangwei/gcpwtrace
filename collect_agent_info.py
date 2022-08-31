@@ -28,7 +28,7 @@ schema = [
 ]
 
 # Construct a BigQuery client object.
-client = bigquery.Client(location='asia-east1')
+client = bigquery.Client(location='us-central1')
 #create table
 table = bigquery.Table(table_id, schema=schema)
 client.create_table(table, exists_ok=True)

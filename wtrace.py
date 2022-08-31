@@ -42,6 +42,7 @@ def extract_result(lines):
     result['tcp_latency_us'] = int(lines[3].split(':')[1].split()[0].strip())
     result['gcp_pop'] = None
     result['age'] = None
+    result['packet_loss'] = None
     #different agent return following line in different order, need to check keyword to map to current field
     for line_no in range(4,len(lines)):
         if lines[line_no].lower().find('rtt') != -1:
@@ -58,13 +59,15 @@ def extract_result(lines):
             result['response_length'] = int(lines[line_no].split(':')[1].split(' ')[1].strip())
         elif lines[line_no].lower().find('after tcp handshake') != -1:
             result['http_latency_us'] = int(lines[line_no].split(':')[1].split()[0].strip())
+        elif lines[line_no].lower().find('packet loss') != -1:
+            result['packet_loss'] = float(lines[line_no].split('%')[0].split(' ')[-1].strip())
 
     return result
  
 def run_wtrace(dest_url, bq_client, table_id, agent_ip, run_info, pid, agent_num, loop):
     wtrace_cmd = '/google/data/ro/teams/internetto/wtrace --nowait --ip_version=4 --wtrace_rpc_timeout=3600s --rpc_deadline_secs=3600 --http_max_transfer_sec=3600 --agent={} {}'.format(agent_ip['address'], dest_url)
     # update below to collect more useful info
-    wtrace_cmd += ' | grep -i "Response code\|Time elapsed\|The trace ran on\|rtt min/avg/max\|Using IP address\|Cdn_Cache_Id\|Response length\|age"'
+    wtrace_cmd += ' | grep -i "Response code\|Time elapsed\|The trace ran on\|rtt min/avg/max\|Using IP address\|Cdn_Cache_Id\|Response length\|age\|packet loss"'
     try:
         wtrace_output = subprocess.run(wtrace_cmd, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
         ret_splitlines = wtrace_output.stdout.splitlines()
@@ -152,6 +155,7 @@ def main():
         bigquery.SchemaField('ping_min_latency_ms','FLOAT'),
         bigquery.SchemaField('ping_avg_latency_ms','FLOAT'),
         bigquery.SchemaField('ping_max_latency_ms','FLOAT'),
+        bigquery.SchemaField('packet_loss','FLOAT'),
         bigquery.SchemaField('tcp_latency_us', 'INTEGER'),
         bigquery.SchemaField('http_latency_us','INTEGER'),
         bigquery.SchemaField('response_code','INTEGER'),
