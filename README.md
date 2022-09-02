@@ -7,4 +7,7 @@ Step 1: Get Wtrace Access
 
 Step 2: Using the collectagentinfosavefile.py to save the agent information as a .CSV file, then load the file to BG Table as a Dimension Table, which will refer by following setp.
 
-Step 3: Using the wtracebq.py to start the tracing. before the job, please prepare the service account and place the sa credentials file in the same folder path as the wtracebq.py file. Base on your environment, edit the BQ database & table name.
+Step 3: Edit config.ini for credentials and BQ tables
+
+Step 4: wtrace.py to start the tracing, or edit and use run.sh
+

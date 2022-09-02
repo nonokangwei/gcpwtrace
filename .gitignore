@@ -127,3 +127,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# For this project
+.vscode/
+*.txt
+!requirements.txt
+*.json
+*.csv
+*.ipynb
+reports/
+nohup.out
