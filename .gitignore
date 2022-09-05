@@ -135,5 +135,6 @@ dmypy.json
 *.json
 *.csv
 *.ipynb
+!example.ipynb
 reports/
 nohup.out
